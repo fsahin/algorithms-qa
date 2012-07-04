@@ -1,6 +1,8 @@
 '''
 Find the first unique character in a string containing only english characters
 [a-z]
+
+in O(n) time and doing just 1 scan.
 '''
 
 import sys
