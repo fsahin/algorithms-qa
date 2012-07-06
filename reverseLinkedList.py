@@ -19,7 +19,6 @@ def reverseLinkedList(root):
 
 
 
-
 faruk = Node("faruk")
 emre = Node("emre")
 sahin = Node("sahin")
