@@ -13,18 +13,27 @@ def printLinkedList(root):
         root = root.next
 
 def reverseLinkedList(root):
-    pass
-    
-    
+    """
+    Simple iteration and reverse 
+    Returns the root of the reversed list
+    """
+    prev = None
+
+    while root != None:
+        next = root.next
+        root.next = prev
+        prev = root
+        root = next
+    return prev
 
 
+one = Node("1")
+two = Node("2")
+three = Node("3")
 
-faruk = Node("faruk")
-emre = Node("emre")
-sahin = Node("sahin")
+one.next = two
+two.next = three
 
-faruk.next = emre
-emre.next = sahin
-
-printLinkedList(faruk)
+one = reverseLinkedList(one)
+printLinkedList(one)
 
