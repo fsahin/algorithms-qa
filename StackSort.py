@@ -6,6 +6,7 @@ def sortStack(stack):
     """
     Use a helper stack to sort the original stack, 
     Uses a python list as a stack, 
+    Complexity = O(N^2)
     """
     dest = []
     while len(stack) != 0:
