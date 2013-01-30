@@ -3,28 +3,40 @@ Reverse a linked list
 '''
 
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data=None, nextt=None):
         self.data = data
-        self.next = next
+        self.next = nextt
 
 def printLinkedList(root):
     while root != None:
-        print root.data
+        print root.data,
         root = root.next
+    print
 
-def reverseLinkedList(root):
+def reverseLinkedList(head):
     """
     Simple iteration and reverse 
     Returns the root of the reversed list
     """
     prev = None
-
-    while root != None:
-        next = root.next
-        root.next = prev
-        prev = root
-        root = next
+    while head != None:
+        nextt = head.next
+        head.next = prev
+        prev = head
+        head = nextt
     return prev
+
+def reverseList(head, prev):
+    """
+    Recursively reverse a linked list
+    """
+    if head.next == None:
+        head.next = prev
+        return head
+    else:
+        newhead = reverseList(head.next, head)
+        head.next = prev
+        return newhead
 
 
 one = Node("1")
@@ -34,6 +46,7 @@ three = Node("3")
 one.next = two
 two.next = three
 
-one = reverseLinkedList(one)
 printLinkedList(one)
+reverse = reverseLinkedList(one)
+printLinkedList(reverse)
 
