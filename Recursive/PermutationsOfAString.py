@@ -6,21 +6,32 @@ should print the strings 'tha', 'aht', 'tah', 'ath', 'hta', and 'hat.
 Treat each character in the input string as a distinct character, even if it 
 is repeated. Given the string 'aaa', your routine should print 'aaa' six times. 
 You may print the permutations in any order you choose.
+
+Also get combinations..
 """
 
-
-def getPermutations(str):
-    if len(str) == 1:
-        return [str]
+def getPermutations(s):
+    if len(s) == 1:
+        return [s]
     else:
-        perms = getPermutations(str[1:])
+        perms = getPermutations(s[1:])
         p = []
         for perm in perms:
             for i in range(len(perm) + 1):
-                p.append(perm[0:i] + str[0] + perm[i:])
+                p.append(perm[0:i] + s[0] + perm[i:])
         return p
-        
 
-str = "abcd"
-print getPermutations(str)
+def getCombinations(s):
+    if len(s) == 0:
+        return [['']]
+    else:
+        combs = getCombinations(s[1:])
+        r = combs[:]
+        for comb in combs:
+            r.append([s[0] + comb[0]])
+        return r
+
+s = "abcd"
+print getPermutations(s)
+print getCombinations(s)
 

@@ -19,16 +19,16 @@ def merge(seq1, seq2):
     return result
 
 
-def mergeSort(seq):
+def MergeSortInv(seq):
     if len(seq) <= 1:
         return seq
     
     middle = len(seq) / 2
-    left = mergeSort(seq[:middle])
-    right = mergeSort(seq[middle:])
+    left = MergeSortInv(seq[:middle])
+    right = MergeSortInv(seq[middle:])
     return merge(left, right)
     
 
 
 seq = [3, 7, 1, 9, -2, 4, 12, -45]
-print mergeSort(seq)
+print MergeSortInv(seq)

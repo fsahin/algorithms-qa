@@ -60,7 +60,9 @@ class Queue:
             return item.data
     
 class MyQueue:
-    """Implement a queue using two stacks"""
+    """Implement a queue using two stacks
+    todo: Lazy approach should be used for a better algorith, let the elements
+    sit in stack2 and copy from stack1 to stack2 when stack2 is empty"""
     stack1 = Stack()
     stack2 = Stack()
     
@@ -81,7 +83,8 @@ class MyQueue:
             item = self.stack2.pop()
         
         return result
-    
+
+
 q = MyQueue()
 q.enqueue(10)
 q.enqueue(20)
