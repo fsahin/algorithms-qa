@@ -28,9 +28,9 @@ def traverseInOrder(root):
     """
     if root == None:
         return
-    traversePreOrder(root.left)
+    traverseInOrder(root.left)
     print root.data,
-    traversePreOrder(root.right)
+    traverseInOrder(root.right)
     
 def traversePostOrder(root):
     """
@@ -42,8 +42,8 @@ def traversePostOrder(root):
     """
     if root == None:
         return
-    traversePreOrder(root.left)
-    traversePreOrder(root.right)
+    traversePostOrder(root.left)
+    traversePostOrder(root.right)
     print root.data,
 
 from collections import deque
